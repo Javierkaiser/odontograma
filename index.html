@@ -19,35 +19,34 @@
 
 <body>
   <div class="container">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Odontograma</h3>
+    <div class="card">
+      <div class="card-header">
+        <h3>Odontograma</h3>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <div id="controls" class="panel panel-default">
-              <div class="panel-body">
-                <div class="btn-group" data-toggle="buttons">
+          <div class="col-7 offset-md-3">
+            <div id="controls" class="text-center">
+                <div class="btn-group btn-group-toggle mb-5" data-toggle="buttons">
                   <label id="fractura" class="btn btn-danger active">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Fractura</label>
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Fractura
+                  </label>
                     <label id="restauracion" class="btn btn-primary">
                       <input type="radio" name="options" id="option2" autocomplete="off"> Obturación
                     </label>
                     <label id="extraccion" class="btn btn-warning">
                       <input type="radio" name="options" id="option3" autocomplete="off"> Extracción
                     </label>
-                    <label id="extraer" class="btn btn-warning">
+                    <label id="extraer" class="btn btn-dark">
                       <input type="radio" name="options" id="option4" autocomplete="off"> A Extraer
                     </label>
-                    <label id="puente" class="btn btn-primary">
+                    <label id="puente" class="btn btn-info">
                       <input type="radio" name="options" id="option5" autocomplete="off"> Puente
                     </label>
-                    <label id="borrar" class="btn btn-default">
+                    <label id="borrar" class="btn btn-secondary">
                       <input type="radio" name="options" id="option6" autocomplete="off"> Borrar
                     </label>
                   </div>
-                </div>
               </div>
             </div>
             <div id="tr" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -71,8 +70,8 @@
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="panel panel-default">
-                <div class="panel-body">
+              <div class="card">
+                <div class="card-body">
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
                     <div style="height: 20px; width:20px; display:inline-block;" class="click-red"></div> = Fractura/Carie
                     <br>
@@ -92,10 +91,6 @@
         </div>
       </div>
     </div>
-    <!-- jQuery -->
-    <script src="jquery-1.10.2.min.js"></script>
-    <!-- Bootstrap JavaScript -->
-    <script src="tools/bootstrap/bootstrap.js"></script>
     <script type="text/javascript">
     function replaceAll(find, replace, str) {
       return str.replace(new RegExp(find, 'g'), replace);
