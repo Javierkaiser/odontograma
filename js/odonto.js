@@ -126,23 +126,21 @@ $(document).ready(function() {
       break;
       case "extraer":
       var dientePosition = $(this).position();
-      console.log($(this))
-      console.log(dientePosition)
       $(this).parent().children().each(function(index, el) {
+        var pos2 = $(el).position();
         if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
-          $(this).parent().append('<i style="color:red;" class="fa fa-times fa-3x fa-fw"></i>');
+          $(this).parent().append('<i style="color:red;" class="fas fa-times fa-3x fa-fw"></i>');
           if ($(el).hasClass("centro")) {
-            //console.log($(this).parent().children("i"))
             $(this).parent().children("i").css({
               "position": "absolute",
-              "top": "24%",
-              "left": "18.58ex"
+              "top": pos2.top -10,
+              "left": pos2.left -17
             });
           } else {
             $(this).parent().children("i").css({
               "position": "absolute",
-              "top": "21%",
-              "left": "1.2ex"
+              "top": pos2.top -15,
+              "left": pos2.left -22
             });
           }
           //
