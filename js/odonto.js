@@ -148,64 +148,28 @@ $(document).ready(function() {
       });
       break;
       case "puente":
-      var dientePosition = $(this).offset(), leftPX;
-      console.log($(this)[0].offsetLeft)
-      var noDiente = $(this).parent().children().first().text();
-      var cuadrante = $(this).parent().parent().attr('id');
-      var left = 0,
-      width = 0;
-      if (arrayPuente.length < 1) {
-        $(this).parent().children('.cuadro').css('border-color', 'red');
-        arrayPuente.push({
-          diente: noDiente,
-          cuadrante: cuadrante,
-          left: $(this)[0].offsetLeft,
-          father: null
-        });
-      } else {
-        $(this).parent().children('.cuadro').css('border-color', 'red');
-        arrayPuente.push({
-          diente: noDiente,
-          cuadrante: cuadrante,
-          left: $(this)[0].offsetLeft,
-          father: arrayPuente[0].diente
-        });
-        var diferencia = Math.abs((parseInt(arrayPuente[1].diente) - parseInt(arrayPuente[1].father)));
-        if (diferencia == 1) width = diferencia * 60;
-        else width = diferencia * 50;
-
-        if(arrayPuente[0].cuadrante == arrayPuente[1].cuadrante) {
-          if(arrayPuente[0].cuadrante == 'tr' || arrayPuente[0].cuadrante == 'tlr' || arrayPuente[0].cuadrante == 'br' || arrayPuente[0].cuadrante == 'blr') {
-            if (arrayPuente[0].diente > arrayPuente[1].diente) {
-              console.log(arrayPuente[0])
-              leftPX = (parseInt(arrayPuente[0].left)+10)+"px";
-            }else {
-              leftPX = (parseInt(arrayPuente[1].left)+10)+"px";
-              //leftPX = "45px";
-            }
-          }else {
-            if (arrayPuente[0].diente < arrayPuente[1].diente) {
-              leftPX = "-45px";
-            }else {
-              leftPX = "45px";
-            }
+      var dientePosition = $(this).position();
+      $(this).parent().children().each(function(index, el) {
+        var pos2 = $(el).position();
+        if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
+          if ($(el).hasClass("centro")) {
+            $(this).parent().append('<i style="color:red;" class="fas fa-grip-lines fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -3,
+              "left": pos2.left -8
+            });
+          } else {
+            $(this).parent().append('<i style="color:red;" class="fas fa-grip-lines fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -8,
+              "left": pos2.left -13
+            });
           }
+          //
         }
-        console.log(leftPX)
-        /*$(this).parent().append('<div style="z-index: 9999; height: 5px; width:' + width + 'px;" id="puente" class="click-red"></div>');
-        $(this).parent().children().last().css({
-        "position": "absolute",
-        "top": "80px",
-        "left": "50px"
-      });*/
-      $(this).parent().append('<div style="z-index: 9999; height: 5px; width:' + width + 'px;" id="puente" class="click-red"></div>');
-      $(this).parent().children().last().css({
-        "position": "absolute",
-        "top": "80px",
-        "left": leftPX
       });
-    }
-
     break;
     default:
     console.log("borrar case");
