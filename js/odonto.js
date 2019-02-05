@@ -86,7 +86,8 @@ var arrayPuente = [];
 $(document).ready(function() {
   createOdontogram();
   $(".click").click(function(event) {
-    var control = $("#controls").children().find('.active').attr('id');
+    //var control = $("#controls").children().find('.active').attr('id');
+    var control = $( "input:checked" ).attr('id');
     var cuadro = $(this).find("input[name=cuadro]:hidden").val();
     console.log($(this).attr('id'))
     switch (control) {
@@ -116,11 +117,24 @@ $(document).ready(function() {
       break;
       case "extraccion":
       var dientePosition = $(this).position();
-      console.log($(this))
-      console.log(dientePosition)
       $(this).parent().children().each(function(index, el) {
-        if ($(el).hasClass("click")) {
-          $(el).addClass('click-delete');
+        var pos2 = $(el).position();
+        if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
+          $(this).parent().append('<i style="color:red;" class="fas fa-times fa-3x fa-fw"></i>');
+          if ($(el).hasClass("centro")) {
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -10,
+              "left": pos2.left -17
+            });
+          } else {
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -15,
+              "left": pos2.left -22
+            });
+          }
+          //
         }
       });
       break;
@@ -129,7 +143,7 @@ $(document).ready(function() {
       $(this).parent().children().each(function(index, el) {
         var pos2 = $(el).position();
         if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
-          $(this).parent().append('<i style="color:red;" class="fas fa-times fa-3x fa-fw"></i>');
+          $(this).parent().append('<i style="color:blue;" class="fas fa-times fa-3x fa-fw"></i>');
           if ($(el).hasClass("centro")) {
             $(this).parent().children("i").css({
               "position": "absolute",
@@ -170,11 +184,105 @@ $(document).ready(function() {
           //
         }
       });
-    break;
-    default:
-    console.log("borrar case");
-  }
+      break;
+      case "perno":
+      var dientePosition = $(this).position();
+      $(this).parent().children().each(function(index, el) {
+        var pos2 = $(el).position();
+        if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
+          if ($(el).hasClass("centro")) {
+            $(this).parent().append('<i style="color:red;" class="fas fa-angle-up fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -3,
+              "left": pos2.left -8
+            });
+          } else {
+            $(this).parent().append('<i style="color:red;" class="fas fa-angle-up fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -8,
+              "left": pos2.left -13
+            });
+          }
+          //
+        }
+      });
+      break;
+      case "aperno":
+      var dientePosition = $(this).position();
+      $(this).parent().children().each(function(index, el) {
+        var pos2 = $(el).position();
+        if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
+          if ($(el).hasClass("centro")) {
+            $(this).parent().append('<i style="color:blue;" class="fas fa-angle-up fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -3,
+              "left": pos2.left -8
+            });
+          } else {
+            $(this).parent().append('<i style="color:blue;" class="fas fa-angle-up fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -8,
+              "left": pos2.left -13
+            });
+          }
+          //
+        }
+      });
+      break;
+      case "corona":
+      var dientePosition = $(this).position();
+      $(this).parent().children().each(function(index, el) {
+        var pos2 = $(el).position();
+        if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
+          if ($(el).hasClass("centro")) {
+            $(this).parent().append('<i style="color:red;" class="fas fa-circle fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -3,
+              "left": pos2.left -7
+            });
+          } else {
+            $(this).parent().append('<i style="color:red;" class="fas fa-circle fa-1x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -1,
+              "left": pos2.left -3
+            });
+          }
+          //
+        }
+      });
+      break;
+      case "acoronar":
+      var dientePosition = $(this).position();
+      $(this).parent().children().each(function(index, el) {
+        var pos2 = $(el).position();
+        if ($(el).hasClass("centro") || $(el).hasClass("centro-leche")) {
+          if ($(el).hasClass("centro")) {
+            $(this).parent().append('<i style="color:blue;" class="fas fa-circle fa-2x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -3,
+              "left": pos2.left -7
+            });
+          } else {
+            $(this).parent().append('<i style="color:blue;" class="fas fa-circle fa-1x fa-fw"></i>');
+            $(this).parent().children("i").css({
+              "position": "absolute",
+              "top": pos2.top -1,
+              "left": pos2.left -3
+            });
+          }
+          //
+        }
+      });
+      break;
+    }
+    return false;
+  });
   return false;
-});
-return false;
 });

@@ -26,19 +26,27 @@
       <div class="card-body">
         <div class="row">
           <div class="col-12">
-            <div id="controls" class="text-center float-right">
-                <div class="btn-group btn-group-toggle mb-5" data-toggle="buttons">
+            <!--<div id="controls" class="text-center float-right">
+
+                <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label id="fractura" class="btn btn-danger active">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Fractura
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Restauración Hecha
                   </label>
                     <label id="restauracion" class="btn btn-primary">
-                      <input type="radio" name="options" id="option2" autocomplete="off"> Obturación
+                      <input type="radio" name="options" id="option2" autocomplete="off"> Restauración A Realizar
                     </label>
-                    <label id="extraccion" class="btn btn-warning">
-                      <input type="radio" name="options" id="option3" autocomplete="off"> Extracción
+                  </div>
+                  </div>
+                    <label id="extraccion" class="btn btn-danger">
+                      <input type="radio" name="options" id="option3" autocomplete="off"> Extracción Hecha
                     </label>
-                    <label id="extraer" class="btn btn-dark">
-                      <input type="radio" name="options" id="option4" autocomplete="off"> A Extraer
+                    <label id="extraer" class="btn btn-primary">
+                      <input type="radio" name="options" id="option4" autocomplete="off"> Extracción a Realizar
                     </label>
                     <label id="puente" class="btn btn-info">
                       <input type="radio" name="options" id="option5" autocomplete="off"> Puente
@@ -47,7 +55,98 @@
                       <input type="radio" name="options" id="option6" autocomplete="off"> Borrar
                     </label>
                   </div>
-              </div>
+              </div>-->
+              <nav class="navbar navbar-expand-lg navbar-light bg-light" id="controls">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restauración</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <input type="radio" name="options" id="fractura" autocomplete="off" checked>
+                              </div>
+                            </div>
+                            <input type="text" value="Realizada" class="form-control" readonly>
+                          </div>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <input type="radio" name="options" id="restauracion" autocomplete="off" checked>
+                              </div>
+                            </div>
+                          <input type="text" value="A Realizar" class="form-control" readonly>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extracción</a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  <input type="radio" name="options" id="extraccion" autocomplete="off" checked>
+                                </div>
+                              </div>
+                              <input type="text" value="Realizada" class="form-control" readonly>
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  <input type="radio" name="options" id="extraer" autocomplete="off" checked>
+                                </div>
+                              </div>
+                            <input type="text" value="A Realizar" class="form-control" readonly>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perno</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <input type="radio" name="options" id="perno" autocomplete="off" checked>
+                                  </div>
+                                </div>
+                                <input type="text" value="Realizado" class="form-control" readonly>
+                              </div>
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <input type="radio" name="options" id="aperno" autocomplete="off" checked>
+                                  </div>
+                                </div>
+                              <input type="text" value="A Realizar" class="form-control" readonly>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Corona</a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                      <input type="radio" name="options" id="corona" autocomplete="off" checked>
+                                    </div>
+                                  </div>
+                                  <input type="text" value="Realizada" class="form-control" readonly>
+                                </div>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                      <input type="radio" name="options" id="acoronar" autocomplete="off" checked>
+                                    </div>
+                                  </div>
+                                <input type="text" value="A Realizar" class="form-control" readonly>
+                                </div>
+                              </div>
+                            </li>
+                    </ul>
+                      </div>
+</nav>
+
             </div>
             <div id="tr" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             </div>

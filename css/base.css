@@ -20,7 +20,7 @@
 
 .cuadro:hover {
     /*background: rgba(117, 198, 243, 0.4);*/
-    
+
     cursor: pointer;
 }
 
@@ -67,7 +67,7 @@
 .centro:hover {
     border: 1px solid rgba(117, 198, 243, 0.4);
     /*background-color: rgba(117, 198, 243, 0.4);*/
-    
+
     cursor: pointer;
 }
 
@@ -135,7 +135,7 @@
 
 .cuadro-leche:hover {
     /*background: rgba(117, 198, 243, 0.4);*/
-    
+
     cursor: pointer;
 }
 
@@ -188,6 +188,16 @@
 .centro-leche:hover {
     border: 1px solid rgba(117, 198, 243, 0.4);
     /*background-color: rgba(117, 198, 243, 0.4);*/
-    
+
     cursor: pointer;
+}
+
+.btn.active
+{
+  box-shadow: 0 0 0 .2rem rgba(10, 10, 10, 0.7);
+}
+
+.form-control:disabled, .form-control[readonly]
+{
+  background-color: #ffffff !important;
 }
