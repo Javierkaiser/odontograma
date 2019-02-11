@@ -103,7 +103,7 @@
 }
 
 .click-blue {
-    background-color: blue;
+    background-color: blue !important;
 }
 
 .click-delete {
@@ -200,4 +200,14 @@
 .form-control:disabled, .form-control[readonly]
 {
   background-color: #ffffff !important;
+}
+
+.rojo
+{
+  color: red !important;
+}
+
+.azul
+{
+  color: blue !important;
 }
