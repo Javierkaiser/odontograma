@@ -134,6 +134,19 @@
                       </div>
                     </div>
                   </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Operaciones</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <div class="input-group" onclick="rev()">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="radio" name="options" id="borrar" autocomplete="off" checked>
+                          </div>
+                        </div>
+                        <input type="text" value="Borrar" class="form-control" readonly>
+                      </div>
+                    </div>
+                  </li>
                   <li class="nav-item">
                     <button class="btn" type="button" name="button" onclick="guardar()">Guardar</button>
                   </li>
@@ -164,9 +177,12 @@
       </div>
     </div>
   </div>
+  <form action="./php/some.php" method="post" id="form01">
+    <input type="hidden" name="datos" value="" id="datos">
+  </form>
   <script src="./js/odonto.js" charset="utf-8"></script>
   <script type="text/javascript">
-  //var arreglo = 
+  //var arreglo = <?php //echo $arreglo; ?>
   </script>
 </body>
 </html>

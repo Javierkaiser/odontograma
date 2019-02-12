@@ -344,6 +344,15 @@ $(document).ready(function() {
         }
       });
       break;
+      case "borrar":
+      if ($(this).hasClass("click-blue")) {
+        $(this).removeClass('click-blue 1');
+      } else {
+        if ($(this).hasClass("click-red")) {
+          $(this).removeClass('click-red 1');
+        }
+      }
+      break;
     }
     return false;
   });
@@ -362,11 +371,13 @@ function guardar() {
   }
   $(".1").each(inserto);
 
-  $.ajax({
+  /*$.ajax({
     method: "POST",
     url: "./php/some.php",
     data: {"datos":JSON.stringify(arreglo)}
-  })
+  })*/
+  $("#datos").val(JSON.stringify(arreglo));
+  $("#form01").submit();
 }
 
 function cargar() {
@@ -447,4 +458,16 @@ function cargar() {
     }
     arreglo.forEach(recargo);
   }
+}
+
+function svgclick(el) {
+  var control = $( "input:checked" ).attr('id');
+  if(control == "borrar")
+  {
+    $(el).remove();
+  }
+}
+
+function rev() {
+  $("svg").attr("onclick","svgclick(this)");
 }

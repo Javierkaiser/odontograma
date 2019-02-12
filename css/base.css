@@ -205,9 +205,11 @@
 .rojo
 {
   color: red !important;
+  cursor: pointer;
 }
 
 .azul
 {
   color: blue !important;
+  cursor: pointer;
 }
